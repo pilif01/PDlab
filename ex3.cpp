@@ -27,7 +27,6 @@ int get_key_subkeys(wchar_t path[10000]) {
                 int name_len = wcslen(szSubkey);
  
                 get_key_subkeys(new_path);
-               // remove szSubkey from new_path so that it does not append all subkeys name in a row.
  
                 if (RegQueryValueEx(hSubkey, L"ImagePath", NULL, &cbType, (LPBYTE)szImagePath, &cbData) == ERROR_SUCCESS) {
                     if (cbType == 0x01 || cbType == 0x02) {
